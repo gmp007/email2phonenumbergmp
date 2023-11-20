@@ -958,7 +958,9 @@ def set_proxy_list():
     file_content = proxy_file.read()
     file_content = filter(None, file_content)
     # Remove last \n if needed
+    file_content = '\n'.join(file_content) 
     proxy_list_not_formatted = file_content.split("\n")
+    #proxy_list_not_formatted = file_content.split("\n")
     proxy_file.close()
     for proxy_not_formatted in proxy_list_not_formatted:
         separator_position = proxy_not_formatted.find("://")
